@@ -1,0 +1,138 @@
+:root {
+  --light-green: rgb(183, 235, 185);
+  --dark-green: rgb(150, 209, 143);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  background-color: #777;
+  background-image: url(./images/background.jpg);
+}
+
+p {
+  margin: 0;
+}
+
+.navbar {
+  position: fixed;
+  background-color: black;
+  color: white;
+  width: 100dvw;
+  top: 0;
+  height: fit-content;
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+  height: 40px;
+  padding: 0 1rem;
+  margin: 4px 0;
+  transition: 100ms ease-in-out;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+
+#main {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(183, 235, 185);
+  padding: 30px 0;
+  height: 100%;
+  width: 700px;
+  max-width: 90%;
+  border: solid 2px black;
+}
+
+#header {
+  margin: 30px;
+  padding: 2rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+#header h1 {
+  font-family: "Petit Formal Script", cursive;
+  font-size: 3rem;
+}
+
+#contact-section {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--dark-green);
+}
+
+#profile-image {
+  width: 150px;
+  margin: 30px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#contact-info {
+  margin: auto;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.skill {
+  display: flex;
+  width: fit-content;
+  color: black;
+  background-color: var(--dark-green);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: solid 1px black;
+}
+
+.skill-icon {
+  width: 30px;
+  height: 30px;
+  margin: 8px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: var(--light-green);
+}
+
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    padding-right: 40px;
+  }
+  #main {
+    padding-top: 200px;
+  }
+}
