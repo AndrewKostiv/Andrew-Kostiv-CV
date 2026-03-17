@@ -105,7 +105,7 @@ p {
   grid-template-areas:
     "pfp name"
     "pfp description";
-  background: linear-gradient(45deg, #4ec2b6, #54b9e4) !important;
+  background: linear-gradient(45deg, #4ec2b6f0, #54b9e4f0) !important;
   margin-top: 80px;
   padding: 16px;
   border-radius: 10px;
