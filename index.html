@@ -20,23 +20,31 @@
 <body>
     <nav-bar></nav-bar>
     <main id="main">
-        <header id="header">
-            <h1>Andrew Kostiv</h1>
-            <p>
-                Computer science student at Binghamton University.
-            </p>
-            <p>
-                USA, NY, Binghamton - Syracuse
-            </p>
-        </header>
-        <article id="contact-section">
-            <img id="profile-image" src="./images/pfp.jpg" alt="Andrew Kostiv">
-            <section id="contact-info">
-                <P><strong>Phone: </strong>(315) 123-4567</P>
-                <p><strong>Email: </strong>akostiv@Binghamton.edu</p>
+        <header id="header" class="card">
+            <img id="pfp" src="./images/pfp.jpg" alt="Andrew Kostiv">
+            <h1 id="name">Andrew Kostiv</h1>
+            <section id="description">
+                <p>
+                    Computer science student at Binghamton University.
+                </p>
+                <p>
+                    USA, NY, Binghamton - Syracuse
+                </p>
             </section>
-        </article>
-        <article>
+        </header>
+
+        <section id="contact" class="card">
+            <h2>
+                <span class="material-symbols-outlined">
+                    call
+                </span>
+                Contact Info
+            </h2>
+            <P><strong>Phone: </strong>(315) 123-4567</P>
+            <p><strong>Email: </strong>akostiv@Binghamton.edu</p>
+        </section>
+
+        <article id="education" class="card">
             <h2><span class="material-symbols-outlined">
                     auto_stories
                 </span> Education</h2>
@@ -44,7 +52,8 @@
                 B.S. Computer Science - Binghamton University
             </p>
         </article>
-        <article>
+
+        <article id="experience" class="card">
             <h2><span class="material-symbols-outlined">
                     work
                 </span> Experience</h2>
@@ -52,11 +61,15 @@
                 Three years of coding several independent projects
             </p>
         </article>
-        <article>
-            <h2><span class="material-symbols-outlined">
+
+        <article id="skills" class="card">
+            <h2>
+                <span class="material-symbols-outlined">
                     bolt
-                </span>Skills</h2>
-            <section class="skills">
+                </span>
+                Skills
+            </h2>
+            <section>
                 <div class="skill">
                     <h3>HTML</h3>
                     <svg class="skill-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +102,7 @@
                     </svg>
                 </div>
                 <div class="skill">
-                    <h3>JavaScript </h3>
+                    <h3>JavaScript</h3>
                     <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" aria-label="JavaScript" role="img"
                         viewBox="0 0 512 512">
                         <rect width="512" height="512" rx="15%" fill="#f7df1e" />
@@ -99,7 +112,7 @@
                 </div>
                 <div class="skill">
                     <h3>React</h3>
-                    <svg class="skill-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="skill-icon white-bg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z"
                             fill="#53C1DE" />
@@ -111,9 +124,9 @@
             </section>
 
         </article>
-
-
     </main>
+    <div class="spacer"></div>
+    <footer id="footer">&copy; Andrew Kostiv 2026</footer>
 
 </body>
 

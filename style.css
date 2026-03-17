@@ -1,15 +1,30 @@
 :root {
-  --light-green: rgb(183, 235, 185);
-  --dark-green: rgb(150, 209, 143);
+  --card: #69d5e8;
+  --background: #31424df1;
+  --navbar: #001113f0;
+  --text: #ffffff;
 }
 
 html,
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
   background-color: #777;
-  background-image: url(./images/background.jpg);
+  background-image: url(./images/background.avif);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text);
+}
+
+h2 {
+  display: flex;
+  place-content: center;
+  gap: 10px;
 }
 
 p {
@@ -18,13 +33,13 @@ p {
 
 .navbar {
   position: fixed;
-  background-color: black;
   color: white;
-  width: 100dvw;
-  top: 0;
   height: fit-content;
-  border-bottom: 2px solid white;
   box-sizing: border-box;
+  border-bottom: 2px solid white;
+  background-color: var(--navbar);
+  top: 0;
+  width: 100dvw;
 }
 
 .navbar ul {
@@ -32,8 +47,8 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: auto;
   list-style-type: none;
+  margin: 0;
   gap: 1rem;
 }
 
@@ -44,95 +59,192 @@ p {
   color: white;
   text-decoration: none;
   text-align: center;
-  width: fit-content;
+  width: 6rem;
+  transition: 100ms ease-in-out;
   height: 40px;
   padding: 0 1rem;
   margin: 4px 0;
-  transition: 100ms ease-in-out;
 }
 
 .navbar a:hover {
-  background-color: white;
+  background-color: rgba(238, 252, 255, 0.9);
   color: black;
   border-radius: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: var(--background);
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 1px 1px 8px black;
 }
 
 #main {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "contact experience"
+    "education education"
+    "skills skills";
   margin: 0 auto;
-  text-align: center;
-  background-color: rgb(183, 235, 185);
-  padding: 30px 0;
-  height: 100%;
-  width: 700px;
+  flex: 1;
+  gap: 1rem;
+  width: min(60vw, 1400px);
   max-width: 90%;
-  border: solid 2px black;
+  text-shadow: 1.5px 1.5px 1px black;
 }
 
 #header {
-  margin: 30px;
-  padding: 2rem;
-  background-color: rgb(255, 255, 255);
+  grid-area: header;
+  display: grid;
+  grid-template-areas:
+    "pfp name"
+    "pfp description";
+  background: linear-gradient(45deg, #4ec2b6, #54b9e4) !important;
+  margin-top: 80px;
+  padding: 16px;
   border-radius: 10px;
+  text-shadow: 1px 1px 1px black;
 }
 
-#header h1 {
+#pfp {
+  grid-area: pfp;
+  margin: auto;
+  object-fit: cover;
+  border: solid 1px black;
+  border-radius: 5%;
+  width: 200px;
+  aspect-ratio: 1/1;
+  box-shadow:
+    -4px -4px 10px #000000,
+    2px 2px 10px #ffffff7d;
+}
+
+#name {
+  grid-area: name;
+  text-align: left;
   font-family: "Petit Formal Script", cursive;
-  font-size: 3rem;
+  font-size: 2rem;
+  margin: 30px;
 }
 
-#contact-section {
+#description {
+  grid-area: description;
+  text-align: left;
+  margin: 30px;
+}
+
+#contact {
+  grid-area: contact;
+}
+#contact span {
+  padding-top: 5px;
+}
+
+#education {
+  grid-area: education;
+}
+#education span {
+  padding-top: 4px;
+}
+
+#experience {
+  grid-area: experience;
+  text-align: center;
+  padding: 16px;
+}
+#experience span {
+  padding-top: 3px;
+}
+
+#skills {
+  grid-area: skills;
+}
+#skills section {
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: var(--dark-green);
+  gap: 16px;
+  padding-bottom: 2rem;
 }
-
-#profile-image {
-  width: 150px;
-  margin: 30px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
+#skills span {
+  padding-top: 3.73px;
 }
-#contact-info {
-  margin: auto;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 30px;
-  gap: 1rem;
-  margin: 2rem;
-}
-
 .skill {
-  display: flex;
+  display: inline-flex;
+  flex-direction: column;
   width: fit-content;
-  color: black;
-  background-color: var(--dark-green);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
   border: solid 1px black;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background-color: var(--card);
 }
-
 .skill-icon {
   width: 30px;
   height: 30px;
-  margin: 8px;
-  padding: 4px;
-  border-radius: 50%;
-  background-color: var(--light-green);
+  border-radius: 25%;
+  margin: auto;
 }
 
-@media (max-width: 600px) {
+.white-bg {
+  background-color: white;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 64px;
+  margin-top: 16px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    position: static;
+  }
   .navbar ul {
     flex-direction: column;
     padding-right: 40px;
+    gap: 1px;
+  }
+  .navbar a {
+    width: 90dvw;
+  }
+  #header {
+    margin-top: 16px;
+    padding: 0;
+    grid-template-areas:
+      "name"
+      "description"
+      "pfp";
   }
   #main {
-    padding-top: 200px;
+    padding: 0;
+    grid-template-areas:
+      "header"
+      "contact"
+      "experience"
+      "education"
+      "skills";
+  }
+
+  #name,
+  #description {
+    text-align: center;
+  }
+
+  #pfp {
+    width: 50%;
+    margin-bottom: 16px;
   }
 }
